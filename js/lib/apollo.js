@@ -5,9 +5,6 @@ import { ApolloClient } from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { HttpLink } from "apollo-link-http";
 import fetch from "isomorphic-unfetch";
-import getConfig from "next/config";
-
-const { serverRuntimeConfig, _ } = getConfig();
 
 let apolloClient = null;
 
@@ -123,7 +120,7 @@ function createApolloClient(initialState = {}) {
     link: new HttpLink({
       uri: "http://localhost:8080/v1/graphql",
       headers: {
-        "x-hasura-admin-secret": serverRuntimeConfig.hasuraSecret,
+        "x-hasura-admin-secret": process.env.hasuraAdmin,
       },
       credentials: "same-origin",
       fetch,
