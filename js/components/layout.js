@@ -1,4 +1,3 @@
-import NextLink from "next/link";
 import { Link } from "@chakra-ui/core";
 import { Box, Flex, Heading, Text, Button } from "@chakra-ui/core";
 
