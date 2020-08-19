@@ -86,3 +86,12 @@ export const ONE_AREA_QUERY = gql`
     }
   }
 `;
+
+// mutation
+export const ADD_PROJECT_QUERY = gql`
+  mutation addProject($object: projects_insert_input!) {
+    insert_projects_one(object: $object) {
+      code
+    }
+  }
+`;

@@ -1,8 +1,7 @@
 import { useState, useCallback } from "react";
 import NextLink from "next/link";
 import { Box, Link, Heading, List, ListItem } from "@chakra-ui/core";
-// import Search from "./search";
-import { Input } from "@chakra-ui/core";
+import { Input, Button } from "@chakra-ui/core";
 
 export default function Projects({ projects }) {
   const [query, setQuery] = useState("");
@@ -17,14 +16,19 @@ export default function Projects({ projects }) {
       setResults(filteredList);
     } else {
       setResults(projects);
-    } 
+    }
   });
 
   return (
     <Box margin="20px">
-      <Heading as="h2" color="orange.500">
-        Projects
-      </Heading>
+      <Box display="flex" justifyContent="space-between">
+        <Heading as="h2" color="orange.500">
+          Projects
+        </Heading>
+        <NextLink href="/addProject" passHref>
+          <Button size="md">+</Button>
+        </NextLink>
+      </Box>
       <Input placeholder="Search project" onChange={handleChange} />
       <List>
         {results.map((project) => (

@@ -7,7 +7,7 @@ const client = new ApolloClient({
   link: new HttpLink({
     uri: "http://localhost:8080/v1/graphql",
     headers: {
-      "x-hasura-admin-secret": process.env.hasuraAdmin,
+      "x-hasura-admin-secret": "myadminsecretkey",
     },
     credentials: "same-origin",
     fetch,
