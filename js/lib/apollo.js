@@ -120,7 +120,7 @@ function createApolloClient(initialState = {}) {
     link: new HttpLink({
       uri: "http://localhost:8080/v1/graphql",
       headers: {
-        "x-hasura-admin-secret": "myadminsecretkey",
+        "x-hasura-admin-secret": process.env.NEXT_PUBLIC_HASURA_ADMIN,
       },
       credentials: "same-origin",
       fetch,

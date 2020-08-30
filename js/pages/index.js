@@ -54,6 +54,4 @@ const Index = ({ members, projects, areas }) => {
   );
 };
 
-export default withApollo(Index, {
-  ssr: false,
-});
+export default Index;
